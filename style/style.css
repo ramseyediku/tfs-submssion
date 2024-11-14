@@ -1,0 +1,108 @@
+/* utility classes */
+
+:root {
+    --clr-dark: hsl(0, 0%, 20%);
+    --clr-light: hsl(0, 0%, 100%);
+    --clr-grey: hsla(0, 0%, 69%, 0.432);
+    
+
+
+    --clr-accent: hsl(0, 0%, 5%);
+    --clr-accent-2: rgb(0, 0, 0);
+    --clr-accent-3: hsl(70, 100%, 68%);
+
+    --border-radius: 30px;
+
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
+}
+
+
+body {
+    font-family: var(--body-font-family);
+    color: var(--clr-dark);
+    background-color: var(--clr-accent-2);
+}
+
+
+.container {
+    width: min(700px, 100% - 2rem);
+    margin-inline: auto;
+}
+
+
+.title {
+    font-family: var(--heading-font-family);
+    font-size: 2.5rem;
+}
+
+.button {
+    padding: .9em 3.25em;
+    background-color: var(--clr-accent-3);
+    border-radius: var(--border-radius);
+    color: var(--clr-dark);
+    font-weight: 600;
+    margin-top: 1.5em;
+    display: block;
+    width: 100%;
+    font-size: .9rem;
+    border: none;
+}
+
+
+/* general styling */
+main {
+    display: grid;
+    gap: 2em;
+}
+
+.nav {
+    .logo {
+        color: var(--clr-accent-3);
+    }
+}
+
+.panel {
+    background-color: var(--clr-accent);
+    border-radius: var(--border-radius);
+    padding: 1em;
+
+    h1 {
+        color: var(--clr-light);
+    }
+
+
+    .form {
+        margin-block: 2em;
+
+        .form__currency {
+            border: solid 1px var(--clr-grey);
+            border-radius: calc(var(--border-radius) /2);
+            width: 100%;
+            padding: .5em;
+            margin-bottom: 1em;
+
+            display: flex;
+            justify-content: space-between;
+
+            position: relative;
+
+            span {
+                position: absolute;
+                font-size: 0.85rem;
+                top: 1%;
+            }
+
+            .form__currency__value {
+                font-size: 1.2rem;
+                align-self: center;
+            }
+
+            select {
+                background-color: var(--clr-dark);
+                border: 0;
+                border-radius: calc(var(--border-radius) /2);
+                flex-basis: 25%;
+            }
+        }
+    }
+}
