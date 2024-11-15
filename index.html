@@ -15,30 +15,32 @@
 <body>
     <main>
         <div class="container">
-            <nav class="nav">
-                <span class="logo">GlobeFX</span>  
-            </nav>
-            <section class="panel">
-                <h1>Currency Converter</h1>
-                
-                <form action="" class="form" method="post">
 
-                    <div class="form__currency">
-                        <span>Currency from</span>
-                        <input required type="number" name="amount" min="0" step=".01" placeholder="0.00" class="form__currency__value">
-                        <select name="currency-from"></select>
-                    </div>
+            <div class="header">
+                <h1 class="title">GlobeFX</h1>
+                <p>View real-time foreign currency exchange rates</p>
+            </div>
 
-                    <div class="arrows"></div>
+            <form action="" class="form" method="post">
+                <label for="amount">Amount</label>
+                <input required type="number" name="amount" min="0" step=".01" placeholder="0.00" class="form__currency__value">
 
-                    <div class="form__currency">
-                        <span>Currency to</span>
-                        <input type="number" min="0" step=".01" class="form__currency__value" disabled>
-                        <select name="currency-to"></select>
-                    </div>
+                <label for="currency-from">Amount</label>
+                <select name="currency-from"></select>
 
-                    <input class="button" type="submit" value="Convert">
-                </form>
+                <div class="arrows"></div>
+
+                <label for="currency-to">To</label>
+                <select name="currency-to"></select>
+
+                <input class="button" type="submit" value="Convert">
+            </form>
+
+            <section class="resutlts"></section>
+
+            <section class="table">
+                <h1>Exchange Rates</h1>
+
             </section>
         </div>
     </main>

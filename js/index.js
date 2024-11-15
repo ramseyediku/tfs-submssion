@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     let currencyDropdowns = document.querySelectorAll("select")
+    let container = document.querySelector(".container")
+    let currencyInputs = document.querySelectorAll("input[type='number']")
     let form = document.querySelector("form");
     let defaultCurrency = "USD";
 
@@ -22,11 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", e => {
         e.preventDefault();
 
+        let results = document.querySelector(".results")
+        if (results != null) results.remove()
+
         let currencyFrom = currencyDropdowns[0].value
         let currencyTo = currencyDropdowns[1].value
-        let amount = document.querySelector("input[name='amount']")
 
-        https://v6.exchangerate-api.com/v6/YOUR-API-KEY/pair/EUR/GBP/AMOUNT
+        let amount = document.querySelector("input[name='amount']")
 
         fetch(`https://v6.exchangerate-api.com/v6/5f4ac2b2db62a913579d2dbc/pair/${currencyFrom}/${currencyTo}/${amount.value}`, {
             method: 'GET',
@@ -60,8 +64,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // show currency conversion results 
     function showConversionResult(rate,result) {
-        console.log(rate)
-        console.log(result)
+        currencyInputs[1].value = result
+
+        let results = document.createElement("div")
+        results.className = "results"
+        results.innerText = rate;
+        container.append(results)
+
     }
 });
   

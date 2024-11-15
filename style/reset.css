@@ -1,14 +1,12 @@
+/* CSS reset boilerplate I use for projects */
+
 :root {
-    --body-font-family: "Lexend", sans-serif;
-    --heading-font-family: "Lexend", sans-serif;
+  --body-font-family: "Lexend", sans-serif;
+  --heading-font-family: "Lexend", sans-serif;
 
-    --body-line-height: 1.5;
-    --heading-line-height: 1.1;
-
-    --color: red;
+  --body-line-height: 1.5;
+  --heading-line-height: 1.1;
 }
-
-
 
 /* applying box-sizing of border-box */
 *, *::before, *::after {
