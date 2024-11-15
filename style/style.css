@@ -17,10 +17,22 @@
 }
 
 
+
 body {
     font-family: var(--body-font-family);
     color: var(--clr-dark);
     background-color: var(--clr-accent-2);
+}
+
+/* code to remove spinners from input type number specifically from this product */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
 }
 
 
@@ -97,11 +109,20 @@ main {
                 align-self: center;
             }
 
+            input {
+                background-color: var(--clr-accent);
+                border: 0;
+                padding: .75em .25em;
+                color: var(--clr-light);
+                margin-top: .75em;  
+            }
+            
             select {
                 background-color: var(--clr-dark);
                 border: 0;
                 border-radius: calc(var(--border-radius) /2);
                 flex-basis: 25%;
+                text-align: center;
             }
         }
     }

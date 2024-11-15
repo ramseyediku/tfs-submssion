@@ -21,11 +21,11 @@
             <section class="panel">
                 <h1>Currency Converter</h1>
                 
-                <form action="" class="form">
+                <form action="" class="form" method="post">
 
                     <div class="form__currency">
                         <span>Currency from</span>
-                        <p class="form__currency__value">0.00</p>
+                        <input required type="number" name="amount" min="0" step=".01" placeholder="0.00" class="form__currency__value">
                         <select name="currency-from"></select>
                     </div>
 
@@ -33,7 +33,7 @@
 
                     <div class="form__currency">
                         <span>Currency to</span>
-                        <p class="form__currency__value">0.00</p>
+                        <input type="number" min="0" step=".01" class="form__currency__value" disabled>
                         <select name="currency-to"></select>
                     </div>
 
