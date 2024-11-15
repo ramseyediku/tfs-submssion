@@ -21,28 +21,27 @@
                 <p>View real-time foreign currency exchange rates</p>
             </div>
 
-            <form action="" class="form" method="post">
-                <label for="amount">Amount</label>
-                <input required type="number" name="amount" min="0" step=".01" placeholder="0.00" class="form__currency__value">
-
-                <label for="currency-from">Amount</label>
-                <select name="currency-from"></select>
-
-                <div class="arrows"></div>
-
-                <label for="currency-to">To</label>
-                <select name="currency-to"></select>
-
-                <input class="button" type="submit" value="Convert">
-            </form>
-
-            <section class="resutlts"></section>
-
-            <section class="table">
-                <h1>Exchange Rates</h1>
-
+            <section class="screen">
+                <form action="" class="form" method="post">
+                    <label for="amount">Amount</label>
+                    <input required type="number" name="amount" min="0.01" step=".01" placeholder="0.00" class="form__currency__value">
+                    <label for="currency-from">From</label>
+                    <select name="currency-from"></select>
+                    <div class="switch">
+                        &#x2193;
+                        &#x2191;
+                    </div>
+                    <label for="currency-to">To</label>
+                    <select name="currency-to"></select>
+                    <input class="button" type="submit" value="Convert">
+                </form>
+                <section class="results">
+                    <p>Use the currency conversion calculator to find out latest conversion rates!</p>
+                </section>
             </section>
         </div>
     </main>
+
+    <img src="assets/planet.png" alt="earth background image">
 </body>
 </html>

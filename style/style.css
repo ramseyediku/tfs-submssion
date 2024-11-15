@@ -18,6 +18,7 @@ body {
     font-family: var(--body-font-family);
     color: var(--clr-dark);
     background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); 
+    overflow: hidden;
 }
 
 .container {
@@ -42,15 +43,12 @@ body {
     width: 100%;
     font-size: .9rem;
     border: none;
+    max-width: 500px;
 }
 
 
 /* general styling */
 
-main {
-    display: grid;
-    gap: 2em;
-}
 
 input,select {
     background-color: var(--clr-light);
@@ -74,8 +72,12 @@ input[type="number"] {
 }
 
 select {
-    padding-inline: 0.75em;
     border-radius: calc(var(--border-radius) /2);
+}
+
+
+section.screen {
+    display: grid;
 }
 
 .header {
@@ -86,15 +88,81 @@ select {
 }
 
 
-.form {
+.form, .table, .results {
     margin-block: 2em 1em;
     background-color: var(--clr-light);
     border: solid 1px var(--clr-grey);
     border-radius: var(--border-radius);
     padding: 1em;
+    position: relative;
 
     .form__currency__value {
         font-size: 1.2rem;
     }
 }
 
+
+.switch {
+    position: absolute;
+    width: 4.5em;
+    aspect-ratio: 1 / 1;
+    background-color: var(--clr-light);
+    left: 42.5%;
+    top: 50%;
+    border-radius: 50%;
+    border: solid 1px var(--clr-grey);
+    box-shadow: 1px 1px 1px 4px var(--clr-light);
+
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: outline 350ms ease-in-out, scale 350ms ease-in-out;
+
+
+    &:hover, &:focus-within {
+        outline: 3px solid var(--clr-accent);
+        transition: outline 350ms ease-in-out, scale 350ms ease-in-out;
+        scale: 1.1;
+    }
+}
+
+.results {
+    font-weight: 400;
+
+    .results__base {
+        font-size: .9rem;
+    }
+
+    .results__target {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+img {
+    position: fixed;
+    width: 200%;
+    top: 85%;
+    z-index: -1;
+}
+
+/* media query for responsive design */
+@media screen and (min-width: 1200px) {
+    .container {
+      width: min(1600px, 100% - 4rem);
+    }
+
+    section.screen {
+        grid-template-columns: 7fr 3fr;
+        gap: 3em;
+    }
+    
+    .header {
+        text-align: left;
+    }
+  }
+  
